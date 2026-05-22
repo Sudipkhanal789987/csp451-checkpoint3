@@ -11,7 +11,15 @@ function connect() {
     timestamp: new Date().toISOString(),
   };
 }
-
+function query(sql) {
+  return {
+    executed: true,
+    query: sql,
+    resultCount: 0,
+    message: "Query executed successfully",
+  };
+}
 module.exports = {
   connect,
+  query,
 };
