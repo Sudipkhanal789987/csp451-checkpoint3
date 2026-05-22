@@ -16,7 +16,7 @@ This repository is a **starter template** for practicing:
 
 ## Quick Start
 
-```bash
+:```bash
 # 1. Remove the sample conflict markers in src/app.js first (see note above)
 npm install
 npm run dev
@@ -51,3 +51,6 @@ To intentionally create a merge conflict, edit the same lines in one of:
 npm test
 npm run lint
 ```
+:
+## Authentication Feature
+User authentication with validation and dashboard support.
