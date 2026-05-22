@@ -19,7 +19,16 @@ function query(sql) {
     message: "Query executed successfully",
   };
 }
+function getClient() {
+  return {
+    host: databaseConfig.host,
+    port: databaseConfig.port,
+    database: databaseConfig.database,
+    connected: true,
+  };
+}
 module.exports = {
   connect,
   query,
+  getClient,
 };
