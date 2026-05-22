@@ -1,24 +1,27 @@
-/**
- * Starter login behavior (minimal).
- * Feature branch: feature/user-authentication should add:
- * - better validation (inline errors)
- * - UI feedback states (loading, success, failure)
- * - optional: call an API endpoint (e.g., POST /api/auth/login)
- */
-const form = document.getElementById("loginForm");
-const message = document.getElementById("message");
+const loginForm = document.getElementById("loginForm");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+if (loginForm) {
+  loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-  // Minimal checks (students can improve)
-  if (!email || password.length < 6) {
-    message.textContent = "Please enter a valid email and a password (min 6 characters).";
-    return;
-  }
+    const errors = [];
 
-  message.textContent = "Login submitted (stub). Implement authentication in your feature branch.";
-});
+    if (username.length < 3) {
+      errors.push("Username must be at least 3 characters");
+    }
+
+    if (password.length < 6) {
+      errors.push("Password must be at least 6 characters");
+    }
+
+    if (errors.length > 0) {
+      alert(errors.join("\n"));
+      return;
+    }
+
+    alert("Login successful");
+  });
+}
