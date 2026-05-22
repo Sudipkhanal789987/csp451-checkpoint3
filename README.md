@@ -16,7 +16,7 @@ This repository is a **starter template** for practicing:
 
 ## Quick Start
 
-```bash
+:```bash
 # 1. Remove the sample conflict markers in src/app.js first (see note above)
 npm install
 npm run dev
@@ -53,3 +53,6 @@ npm run lint
 ```
 ## API Feature
 Student API endpoints with GET and POST support.
+
+## Authentication Feature
+User authentication with validation and dashboard support.
