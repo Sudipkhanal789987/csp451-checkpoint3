@@ -1,3 +1,6 @@
+![CI](https://github.com/Sudipkhanal789987/csp451-checkpoint3/actions/workflows/ci.yml/badge.svg?branch=main)
+![CodeQL](https://github.com/Sudipkhanal789987/csp451-checkpoint3/actions/workflows/codeql.yml/badge.svg?branch=main)
+
 # CSP-451 GitHub Actions Seed Repo
 
 ![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg?branch=main)
