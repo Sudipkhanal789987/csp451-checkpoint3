@@ -1,6 +1,7 @@
 # Setup Guide
 
 ## Student workflow (fork-based)
+
 1. Fork the instructor template repo on GitHub
 2. Clone your fork:
    ```bash
@@ -19,6 +20,7 @@
    ```
 
 ## Create required branches
+
 ```bash
 git checkout -b feature/user-authentication
 git checkout main

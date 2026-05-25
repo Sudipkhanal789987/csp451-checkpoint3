@@ -1,17 +1,31 @@
 {
-  "name": "csp451-web-starter",
+  "name": "csp451-actions-seed",
   "version": "1.0.0",
-  "description": "CSP-451 Week 2 CheckPoint 2 - Git branching & collaboration template",
+  "description": "Seed repo for GitHub Actions CI exercise with code scanning and coverage gates",
   "main": "src/app.js",
   "type": "commonjs",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "node --watch src/app.js",
-    "test": "node src/tests/smoke.test.js",
-    "lint": "node src/tests/lint-lite.js",
-    "format:check": "node src/tests/format-lite.js"
+    "lint": "eslint .",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "test": "jest --ci --coverage",
+    "audit:check": "npm audit --audit-level=moderate",
+    "build": "node -e \"console.log('Build step OK')\""
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
   },
   "dependencies": {
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.0.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.5",
+    "supertest": "^6.3.4"
   }
 }

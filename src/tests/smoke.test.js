@@ -1,12 +1,23 @@
-// Minimal "smoke test" to ensure Node runs and basic modules load.
-// Not a full test framework: this is intentionally lightweight for Week 2.
+const request = require("supertest");
+const app = require("../app");
 
-const assert = require("assert");
-const { connect } = require("../db");
+describe("GET /", () => {
+  test("returns status code 200", async () => {
+    const response = await request(app).get("/");
+    expect(response.statusCode).toBe(200);
+  });
+});
 
-(function run() {
-  const db = connect();
-  assert.strictEqual(typeof db, "object");
-  assert.strictEqual(db.connected, true);
-  console.log("✅ smoke.test.js passed");
-})();
+describe("GET /health", () => {
+  test("returns status code 200", async () => {
+    const response = await request(app).get("/health");
+    expect(response.statusCode).toBe(200);
+  });
+
+  test("returns healthy status and uptime", async () => {
+    const response = await request(app).get("/health");
+
+    expect(response.body.status).toBe("healthy");
+    expect(typeof response.body.uptime).toBe("number");
+  });
+});
