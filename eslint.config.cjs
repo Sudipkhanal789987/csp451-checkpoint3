@@ -22,12 +22,12 @@ module.exports = [
 
         document: "readonly",
         alert: "readonly",
-        window: "readonly"
-      }
+        window: "readonly",
+      },
     },
     rules: {
       "no-unused-vars": "warn",
-      "no-undef": "warn"
-    }
-  }
+      "no-undef": "warn",
+    },
+  },
 ];
